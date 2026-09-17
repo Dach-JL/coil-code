@@ -14,7 +14,7 @@
     "y-partykit": "^0.0.33"
   },
   "scripts": {
-    "dev": "bunx partykit dev",
-    "deploy": "bunx partykit deploy"
+    "dev": "partykit dev",
+    "deploy": "partykit deploy"
   }
 }

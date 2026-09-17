@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "dev:network": "next dev -H 0.0.0.0",
+    "dev": "next dev --webpack",
+    "dev:network": "next dev --webpack -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "convex": "bunx convex dev",
-    "dev:all": "concurrently \"bun run dev\" \"bun run convex\""
+    "convex": "npx convex dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run convex\""
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
