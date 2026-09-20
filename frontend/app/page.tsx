@@ -118,50 +118,6 @@ export default function HomePage() {
             />
           </div>
 
-          {/* GitHub Link */}
-          {userInfo ? (
-            <div className="hidden md:flex flex-col items-end">
-              <span className="text-xs text-muted-foreground mb-1 mr-1">
-                check it out in
-              </span>
-              <a
-                href="https://github.com/MRQ67/coil-code"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-black px-4 py-2 rounded-full font-medium flex items-center gap-2 hover:bg-gray-200 transition-colors"
-              >
-                <Image
-                  src="/soical_icons/github-142-svgrepo-com.svg"
-                  alt="GitHub"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                GitHub
-              </a>
-            </div>
-          ) : (
-            <div className="text-center">
-              <p className="text-muted-foreground text-sm mb-2">
-                check it out in
-              </p>
-              <a
-                href="https://github.com/MRQ67/coil-code"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-200"
-              >
-                <Image
-                  src="/soical_icons/github-142-svgrepo-com.svg"
-                  alt="GitHub"
-                  width={20}
-                  height={20}
-                  className="w-5 h-5"
-                />
-                <span>GitHub</span>
-              </a>
-            </div>
-          )}
         </header>
 
         {/* MAIN CONTENT */}
@@ -536,56 +492,6 @@ export default function HomePage() {
             © 2025 Coil Code by AA³. All rights reserved
           </p>
 
-          <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <a
-              href="https://github.com/MRQ67"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="/soical_icons/github-142-svgrepo-com.svg"
-                alt="GitHub"
-                width={24}
-                height={24}
-                className="w-6 h-6 invert"
-              />
-            </a>
-            <a
-              href="https://x.com/HimoNotting"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="/soical_icons/X_logo_2023_original.svg"
-                alt="X"
-                width={24}
-                height={24}
-                className="w-6 h-6 invert"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/abdellah-qadi-b229382a2/"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="/soical_icons/linkedin-svgrepo-com.svg"
-                alt="LinkedIn"
-                width={24}
-                height={24}
-                className="w-6 h-6 invert"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/simply_aboo/"
-              className="opacity-60 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="/soical_icons/instagram-167-svgrepo-com.svg"
-                alt="Instagram"
-                width={24}
-                height={24}
-                className="w-6 h-6 invert"
-              />
-            </a>
-          </div>
         </footer>
       </div>
 
