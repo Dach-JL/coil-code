@@ -484,15 +484,6 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* Footer */}
-        <footer className="shrink-0 h-20 flex flex-col md:flex-row justify-between items-center pb-8 mt-auto">
-          <p
-            className={`${userInfo ? "text-gray-500" : "text-foreground"} text-sm`}
-          >
-            © 2025 Coil Code by AA³. All rights reserved
-          </p>
-
-        </footer>
       </div>
 
       {/* Room Code Dialog */}
