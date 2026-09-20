@@ -42,7 +42,7 @@ export function getCachedAvatar(
 
   // Check memory cache first (fastest)
   const memoryCached = memoryCache.get(cacheKey);
-  if (memoryCached) {
+  if (memoryCached && !memoryCached.includes("avatar.iran.liara.run")) {
     return memoryCached;
   }
 
@@ -52,13 +52,13 @@ export function getCachedAvatar(
     if (cached) {
       const entry: CacheEntry = JSON.parse(cached);
 
-      // Check if expired
-      if (!isExpired(entry.timestamp)) {
+      // Check if expired or from old deprecated provider
+      if (!isExpired(entry.timestamp) && !entry.url.includes("avatar.iran.liara.run")) {
         // Update memory cache for faster next access
         memoryCache.set(cacheKey, entry.url);
         return entry.url;
       } else {
-        // Remove expired entry
+        // Remove expired or stale entry
         sessionStorage.removeItem(cacheKey);
       }
     }
@@ -111,7 +111,8 @@ export function preloadAvatar(url: string): Promise<string> {
     };
 
     img.onerror = () => {
-      reject(new Error(`Failed to preload avatar: ${url}`));
+      // Resolve anyway so component fallbacks can render smoothly without crashing
+      resolve(url);
     };
 
     // Set crossOrigin to allow caching from external domain

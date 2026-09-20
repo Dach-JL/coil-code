@@ -1,6 +1,7 @@
 "use client";
 
 import { useUsername } from "@/hooks/useUsername";
+import { getAvatarUrl } from "@/lib/name-generator";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { nanoid } from "nanoid"; // eslint-disable-line @typescript-eslint/no-unused-vars
@@ -144,7 +145,7 @@ export default function HomePage() {
                       alt="coil"
                       width={60}
                       height={20}
-                      className="opacity-80"
+                      className="opacity-80 h-auto w-auto"
                     />
                   </motion.div>
                   <motion.h1
@@ -418,7 +419,7 @@ export default function HomePage() {
               >
                 <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full bg-[#E0D4FC] flex items-center justify-center overflow-hidden shadow-2xl border-[12px] border-[#E0D4FC]/20">
                   <Image
-                    src={`https://avatar.iran.liara.run/public/${userInfo.gender === "random" ? (userInfo.username.charCodeAt(0) % 2 === 0 ? "boy" : "girl") : userInfo.gender}?username=${encodeURIComponent(userInfo.username)}`}
+                    src={getAvatarUrl(userInfo.username, userInfo.gender)}
                     alt={`${userInfo.username}'s avatar`}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"

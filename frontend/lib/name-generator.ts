@@ -120,27 +120,18 @@ export function getAvatarUrl(
   username: string,
   gender: Gender = "random",
 ): string {
-  // Base URL for avatar API
-  const baseUrl = "https://avatar.iran.liara.run/public";
-
   // Encode username for URL (only alphanumeric and spaces)
   const encodedUsername = encodeURIComponent(username.trim());
 
-  // Return appropriate URL based on gender
+  // Return appropriate URL based on gender using Dicebear API
   switch (gender) {
     case "boy":
-      return `${baseUrl}/boy?username=${encodedUsername}`;
+      return `https://api.dicebear.com/9.x/avataaars/png?seed=${encodedUsername}&gender=male`;
     case "girl":
-      return `${baseUrl}/girl?username=${encodedUsername}`;
+      return `https://api.dicebear.com/9.x/avataaars/png?seed=${encodedUsername}&gender=female`;
     case "random":
     default:
-      // For random, randomly choose between boy and girl for consistency
-      // Use username hash to deterministically pick one
-      const hash = username
-        .split("")
-        .reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      const randomGender = hash % 2 === 0 ? "boy" : "girl";
-      return `${baseUrl}/${randomGender}?username=${encodedUsername}`;
+      return `https://api.dicebear.com/9.x/avataaars/png?seed=${encodedUsername}`;
   }
 }
 
