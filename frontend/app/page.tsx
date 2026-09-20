@@ -216,37 +216,7 @@ export default function HomePage() {
                     height={44}
                     className="inline w-11 h-11 md:w-12 md:h-12 align-middle"
                   />{" "}
-                  is a collaborative web code editor made by{" "}
-                  <Glimpse>
-                    <GlimpseTrigger asChild>
-                      <a
-                        href="https://aa3.site"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block"
-                      >
-                        <Image
-                          src="/aa3_logo.svg"
-                          alt="AA3 Logo"
-                          width={50}
-                          height={38}
-                          className="inline w-11 h-10 md:w-12 md:h-11 align-middle hover:opacity-80 transition-opacity"
-                        />
-                      </a>
-                    </GlimpseTrigger>
-                    <GlimpseContent>
-                      <GlimpseImage
-                        src="/screenshots/aa3.png"
-                        alt="AA3 Website Screenshot"
-                      />
-                      <GlimpseTitle>AA3 - My Portfolio Website</GlimpseTitle>
-                      <GlimpseDescription>
-                        My personal portfolio website that showcases my
-                        projects, skills, and experience in software development
-                        and AI applications.
-                      </GlimpseDescription>
-                    </GlimpseContent>
-                  </Glimpse>
+                  is a collaborative web code editor.
                 </motion.h1>
 
                 <motion.div
