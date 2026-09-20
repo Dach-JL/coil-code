@@ -214,18 +214,8 @@ export default function EditorPage() {
       };
       collaborativeDoc.provider.on('synced', handleSync);
 
-      // Fallback timeout: if PartyKit takes more than 3 seconds or is unreachable,
-      // load content anyway so the user is never stuck on a permanent loading screen
-      const timeoutId = setTimeout(() => {
-        if (!initialContentLoadedRef.current) {
-          console.warn('⚠️ PartyKit sync timed out, loading content anyway');
-          loadContentAfterSync();
-        }
-      }, 3000);
-
-      // Cleanup listener and timeout
+      // Cleanup listener
       return () => {
-        clearTimeout(timeoutId);
         collaborativeDoc.provider.off('synced', handleSync);
       };
     }
